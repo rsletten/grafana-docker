@@ -5,7 +5,7 @@ services:
     container_name: grafana
     restart: always
     ports:
-      - 3000:3000
+      - "192.168.1.202:3000:3000"
     networks:
       - monitoring
     volumes:
@@ -16,7 +16,7 @@ services:
     container_name: influxdb
     restart: always
     ports:
-      - 8086:8086
+      - "192.168.1.202:8086:8086"
     networks:
       - monitoring
     volumes:
@@ -27,9 +27,9 @@ services:
     container_name: telegraf
     restart: always
     ports:
-      - 8125:8125
-      - 8092:8092
-      - 8094:8094
+      - "192.168.1.202:8125:8125"
+      - "192.168.1.202:8092:8092"
+      - "192.168.1.202:8094:8094"
     networks:
       - monitoring
     volumes:
